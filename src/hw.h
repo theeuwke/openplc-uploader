@@ -243,6 +243,33 @@ Analog Out:  PB0, PB1                        (%QW0 - %QW1)
 
 #define RS_485_EN                   PA14
 
+#elif defined BOARD_FX1N_20
+
+#undef DIN                          /* override uploader since pinout is fixed */
+#undef DOUT
+#undef AIN
+#undef AOUT
+
+#define DIN                         {PB6, PB5, PB7, PB4, PB3, PD2, PC12, PC11, PC10, PA15, PA14}
+#define DOUT                        {PC9, PC8, PC7, PC6, PB15, PB14, PB13}
+#define AIN                         {}
+#define AOUT                        {}
+
+#ifndef RUN_LED
+#define RUN_LED                     PA12
+#endif
+
+#ifndef ERR_LED
+#define ERR_LED                     PA11
+#endif
+
+#ifndef RUN_SW
+#define RUN_SW                      PB2
+#endif
+
+#define UART1                       Serial1
+#define UART2                       Serial2
+
 #elif defined BOARD_FX3U_14
 
 #undef DIN                          /* override uploader since pinout is fixed */
